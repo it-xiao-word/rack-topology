@@ -26,6 +26,20 @@ An offline rack-topology drawing tool for data centers and server rooms. Just do
 - **Export** — PNG / Excel / PDF; JSON import/export with multi-room selection, plus copy/paste config for cross-device migration.
 - **Save** — the top "Save" button writes a dated JSON file; reopening loads the last save automatically.
 
+### Screenshots
+
+**Core network — dual racks with cross-rack cables**
+![Core network topology](screenshots/01-core-network.png)
+
+**Power & cooling facilities — UPS, battery, AC, and cabling**
+![Facilities topology](screenshots/02-facilities.png)
+
+**Light theme — three aligned racks with status lights**
+![Light theme topology](screenshots/03-light-theme.png)
+
+**Server rows — high-density devices with status indicators**
+![Server rows topology](screenshots/04-server-rows.png)
+
 ### How to use
 Open `rack-topology.html` with Chrome or Edge and start editing.
 
@@ -66,6 +80,20 @@ For personal and internal operations use only.
 - **视图**：整体缩放、深浅主题、机房名标签显隐、对齐与分布工具。
 - **导出**：PNG / Excel / PDF；JSON 支持按机房多选导入导出，另有复制/粘贴配置便于跨设备迁移。
 - **保存**：顶部「保存」自动写出带日期的 JSON，重新打开自动载入最后一次保存。
+
+### 效果截图
+
+**核心网络 —— 双机柜与跨柜连线**
+![核心网络拓扑](screenshots/01-core-network.png)
+
+**供电与制冷 —— UPS、电池、空调及连线**
+![设施拓扑](screenshots/02-facilities.png)
+
+**浅色主题 —— 三机柜对齐与状态灯**
+![浅色主题拓扑](screenshots/03-light-theme.png)
+
+**服务器列柜 —— 高密度设备与状态指示**
+![服务器列柜拓扑](screenshots/04-server-rows.png)
 
 ### 使用方法
 直接用 Chrome / Edge 打开 `rack-topology.html` 即可开始编辑。
