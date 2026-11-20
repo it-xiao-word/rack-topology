@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Local backup / temp artifacts
+*.backup-*.html
+_*.mjs
+_*.png
+node_modules/
