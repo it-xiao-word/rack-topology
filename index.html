@@ -2718,7 +2718,7 @@ function openFacilityEditor(id,kind){
   document.getElementById('p_model').value=f?(f.model||''):'';
   document.getElementById('p_note').value=f?(f.note||''):'';
   facEdit={id:f?f.id:null,kind:k,_lastKind:k,color:f?(f.color||def.color):def.color,status:f?(f.status||'normal'):'normal',
-    ports:f?JSON.parse(JSON.stringify(f.ports||[])):(def.ports||[]).map(n=>({id:uid(),name:n,side:'right'}))};
+    ports:f?JSON.parse(JSON.stringify(f.ports||[])):(def.ports||[]).map((n,i)=>({id:uid(),name:n,side:i%2===0?'left':'right'}))};
   renderFacColors();renderFacStatus();renderFacPorts();
   document.getElementById('delFac').style.display=f?'block':'none';
   document.getElementById('facDrawer').classList.add('open');
@@ -2730,13 +2730,13 @@ document.getElementById('p_type').addEventListener('change',e=>{
     if(document.getElementById('p_name').value===(FAC_KINDS[facEdit._lastKind]||{}).n||!document.getElementById('p_name').value)
       document.getElementById('p_name').value=def.n;
     facEdit.color=def.color;
-    facEdit.ports=(def.ports||[]).map(n=>({id:uid(),name:n,side:'right'}));
+    facEdit.ports=(def.ports||[]).map((n,i)=>({id:uid(),name:n,side:i%2===0?'left':'right'}));
     renderFacColors();renderFacPorts();
   }
   facEdit._lastKind=k;
 });
 document.getElementById('addFacPort').onclick=()=>{
-  facEdit.ports.push({id:uid(),name:'端口'+(facEdit.ports.length+1),side:'right'});renderFacPorts();
+  facEdit.ports.push({id:uid(),name:'端口'+(facEdit.ports.length+1),side:facEdit.ports.length%2===0?'left':'right'});renderFacPorts();
 };
 document.getElementById('saveFac').onclick=()=>{
   const k=document.getElementById('p_type').value,def=FAC_KINDS[k]||FAC_KINDS.ups;
